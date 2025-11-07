@@ -1,0 +1,73 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Local env files (do not commit real secrets)
+.env
+.env.dev
+
+## Common build and OS artifacts
+*.class
+.DS_Store
+*.log
+*.tmp
+
+## Maven / Gradle / build artifacts
+target/
+build/
+*.jar
+*.war
+
+## IDE / editor metadata
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+## macOS
+.DS_Store
+
+## Keystore / secrets
+*.jks
+*.keystore
+
+## JMeter results
+*.jtl
+
+# JMeter generated dashboards and results (large artifacts - do not commit)
+src/test/jmeter/results/
+src/test/jmeter/scalability-results/
+src/test/jmeter/dashboard_*/
+src/test/jmeter/*dashboard*/
+
