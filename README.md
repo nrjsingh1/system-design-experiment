@@ -77,6 +77,46 @@ Notes:
 - `--spring.config.location` completely replaces the default search locations unless you use `spring.config.additional-location`.
 - Profile-based files like `application-local.properties` should live on the classpath or be referenced explicitly.
 
+### Available Performance Profiles
+
+This project includes multiple application property configurations for performance testing:
+
+#### Strategy-Based Profiles
+- **baseline** - Current production config (comprehensive metrics & observability)
+- **minimal** - Maximum throughput (minimal overhead, basic health checks)
+- **aggressive** - Peak load optimization (high connection pools, aggressive settings)
+- **balanced** - Production-ready (good performance with key metrics)
+- **memory-optimized** - Low footprint (resource-constrained environments)
+
+#### AI Model Style Profiles
+Compare how different AI models approach Spring Boot optimization:
+- **gpt4** - Conservative enterprise (comprehensive monitoring, leak detection, audit logs)
+- **claude** - Balanced professional (thoughtful trade-offs, security-conscious)
+- **gemini** - Experimental performance (aggressive pools, cutting-edge optimizations)
+- **copilot** - Pragmatic developer (sensible defaults, inline documentation)
+- **chatgpt35** - Simple approach (minimal config, straightforward)
+
+Example: Run with different profiles:
+```bash
+# Strategy-based
+SPRING_PROFILES_ACTIVE=minimal ./mvnw spring-boot:run
+
+# AI model style
+SPRING_PROFILES_ACTIVE=gpt4 ./mvnw spring-boot:run
+SPRING_PROFILES_ACTIVE=gemini ./mvnw spring-boot:run
+```
+
+📊 **See [PERFORMANCE_TESTING.md](PERFORMANCE_TESTING.md) for detailed testing guide and profile comparison**
+
+📊 **See [AI_CONFIG_COMPARISON.md](AI_CONFIG_COMPARISON.md) for AI model comparison and testing hypothesis**
+
+## Running JMeter tests and viewing results
+```bash
+SPRING_PROFILES_ACTIVE=minimal ./mvnw spring-boot:run
+```
+
+📊 **See [PERFORMANCE_TESTING.md](PERFORMANCE_TESTING.md) for detailed testing guide and profile comparison**
+
 ## Running JMeter tests and viewing results
 
 This repository includes a JMeter test plan at `src/test/jmeter/load-test-plan.jmx` and a helper script `src/test/jmeter/run-scalability-test.sh` that:
